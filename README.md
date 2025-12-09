@@ -1,6 +1,6 @@
 # 🧬 Oligo Analyzer Pro
 
-**A bioinformatics tool for primer analysis, built with Python and Streamlit. It calculates, Tm, analyses GC content, identifies unstable primers, analyses FASTA files, and generates reverse complements.**
+**A professional bioinformatics dashboard for primer design and QC. Features include batch FASTA processing, Tm & Molecular Weight calculation, GC visualization, and instant reverse complement generation. Built with Python & Streamlit.**
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url-here)
 
@@ -55,4 +55,5 @@ If you want to run this tool on your own machine:
 [LinkedIn](will add soon) | [GitHub](will add soon)
 
 ---
+
 *Disclaimer: This tool is intended for research and educational purposes only.*
