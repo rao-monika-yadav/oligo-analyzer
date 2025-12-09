@@ -108,9 +108,9 @@ with st.sidebar:
     st.markdown(
         """
         <div style="display: flex; gap: 10px;">
-            <a href="linked_in" target="_blank">LinkedIn</a> • 
-            <a href="github" target="_blank">GitHub</a> • 
-            <a href="gmail">Email</a>
+            <a href="#" target="_blank">LinkedIn</a> • 
+            <a href="https://github.com/rao-monika-yadav" target="_blank">GitHub</a> • 
+            <a href="#">Email</a>
         </div>
         """, 
         unsafe_allow_html=True
@@ -236,4 +236,5 @@ with tab2:
                 file_name="oligo_batch_results.csv",
                 mime="text/csv",
                 type="primary"
+
             )
