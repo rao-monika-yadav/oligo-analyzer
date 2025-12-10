@@ -52,8 +52,9 @@ If you want to run this tool on your own machine:
 * MSc Bioinformatics Candidate
 * BSc/MSc Biotechnology
 
-[LinkedIn](will add soon) | [GitHub](will add soon)
+[LinkedIn](will add soon) | [GitHub](https://github.com/rao-monika-yadav)
 
 ---
 
 *Disclaimer: This tool is intended for research and educational purposes only.*
+
