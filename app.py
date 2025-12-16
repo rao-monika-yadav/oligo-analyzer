@@ -1,14 +1,20 @@
 import streamlit as st
 import pandas as pd
 from io import StringIO
+from typing import Optional, Dict, Union
 
-# --- PART 1: THE BACKEND (Logic) ---
+# --- PART 1: Backend Logic ---
 def calculate_metrics(dna_seq):
     dna_seq = dna_seq.upper()
     length = len(dna_seq)
+    valid_bases = set("ATGCN")     #allows only valid characters
     
-    if length == 0 or ">" in dna_seq:
+    if length == 0:
         return None
+
+    if not set(dna_set).issubset(valid_bases):
+        if not dna_seq.startswith(">"):
+            return None
         
     a = dna_seq.count("A")
     t = dna_seq.count("T")
@@ -151,30 +157,34 @@ with tab1:
     if analyze_btn:
         if user_dna:
             metrics = calculate_metrics(user_dna)
-            rev_comp = get_reverse_complement(user_dna)
             
-            st.divider() # Visual separator
+            if metrics is None:   #check if metrics came back as None
+                st.error("INVALID SEQUENCE DETECTED! Please use only A, T, G, C, or N.")
+            else:
+                rev_comp = get_reverse_complement(user_dna)
             
-            # Display Metrics
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Melting Temp (Tm)", f"{metrics['Tm (C)']} °C", delta="Target: 55-60°C", delta_color="off")
-            c2.metric("GC Content", f"{metrics['GC%']}%")
-            c3.metric("AT Content", f"{metrics['AT%']}%")
-            c4.metric("Mol Wt", f"{metrics['MW (Da)']} Da")
+                st.divider() # Visual separator
             
-            # Visualization
-            st.subheader("Nucleotide Composition")
-            chart_data = pd.DataFrame({
-                'Nucleotide': ['A', 'T', 'G', 'C'],
-                'Count': [metrics['A_count'], metrics['T_count'], metrics['G_count'], metrics['C_count']]
-            })
-            st.bar_chart(chart_data.set_index('Nucleotide'), color="#0068c9") 
-            
-            # Reverse Complement
-            st.subheader("Reverse Complement")
-            st.code(rev_comp, language='text')
-        else:
-            st.error("Please enter a valid sequence.")
+                # Display Metrics
+                c1, c2, c3, c4 = st.columns(4)
+                c1.metric("Melting Temp (Tm)", f"{metrics['Tm (C)']} °C", delta="Target: 55-60°C", delta_color="off")
+                c2.metric("GC Content", f"{metrics['GC%']}%")
+                c3.metric("AT Content", f"{metrics['AT%']}%")
+                c4.metric("Mol Wt", f"{metrics['MW (Da)']} Da")
+                
+                # Visualization
+                st.subheader("Nucleotide Composition")
+                chart_data = pd.DataFrame({
+                    'Nucleotide': ['A', 'T', 'G', 'C'],
+                    'Count': [metrics['A_count'], metrics['T_count'], metrics['G_count'], metrics['C_count']]
+                })
+                st.bar_chart(chart_data.set_index('Nucleotide'), color="#0068c9") 
+                
+                # Reverse Complement
+                st.subheader("Reverse Complement")
+                st.code(rev_comp, language='text')
+            else:
+                st.error("Please enter a valid sequence.")
 
 # === TAB 2: BULK ANALYSIS ===
 with tab2:
@@ -238,3 +248,4 @@ with tab2:
                 type="primary"
 
             )
+
