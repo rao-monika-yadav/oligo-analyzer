@@ -183,7 +183,7 @@ with tab1:
                 # Reverse Complement
                 st.subheader("Reverse Complement")
                 st.code(rev_comp, language='text')
-            else:
+        else:
                 st.error("Please enter a valid sequence.")
 
 # === TAB 2: BULK ANALYSIS ===
@@ -248,4 +248,5 @@ with tab2:
                 type="primary"
 
             )
+
 
