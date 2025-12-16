@@ -12,7 +12,7 @@ def calculate_metrics(dna_seq):
     if length == 0:
         return None
 
-    if not set(dna_set).issubset(valid_bases):
+    if not set(dna_seq).issubset(valid_bases):
         if not dna_seq.startswith(">"):
             return None
         
@@ -248,5 +248,6 @@ with tab2:
                 type="primary"
 
             )
+
 
 
