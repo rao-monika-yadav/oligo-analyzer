@@ -7,7 +7,7 @@ from typing import Optional, Dict, Union
 def calculate_metrics(dna_seq):
     dna_seq = dna_seq.upper()
     length = len(dna_seq)
-    valid_bases = set("ATGCN")     #allows only valid characters
+    valid_bases = set("ATGCN")     #allows only valid characters 
     
     if length == 0:
         return None
@@ -248,6 +248,7 @@ with tab2:
                 type="primary"
 
             )
+
 
 
 
