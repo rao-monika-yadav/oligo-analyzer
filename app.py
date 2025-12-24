@@ -14,7 +14,7 @@ def calculate_metrics(dna_seq):
 
     if not set(dna_seq).issubset(valid_bases):
         if not dna_seq.startswith(">"):
-            return None
+            return None 
         
     a = dna_seq.count("A")
     t = dna_seq.count("T")
@@ -248,6 +248,7 @@ with tab2:
                 type="primary"
 
             )
+
 
 
 
