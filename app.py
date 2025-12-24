@@ -5,7 +5,7 @@ from typing import Optional, Dict, Union
 
 # --- PART 1: Backend Logic ---
 def calculate_metrics(dna_seq):
-    dna_seq = dna_seq.upper()
+    dna_seq = dna_seq.upper() 
     length = len(dna_seq)
     valid_bases = set("ATGCN")     #allows only valid characters 
     
@@ -248,6 +248,7 @@ with tab2:
                 type="primary"
 
             )
+
 
 
 
