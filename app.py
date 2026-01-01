@@ -64,7 +64,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# B. THE SIDEBAR (Branding Center)
+# B. THE SIDEBAR
 with st.sidebar:
     logo_html = """
     <div style="
@@ -93,7 +93,6 @@ with st.sidebar:
     st.caption("v1.0.0 | Bio-Tools Suite")
     st.markdown("---")
     
-    # FUNCTIONALITY SECTION ---
     st.write("### 🛠️ Key Features")
     st.markdown("""
     - **Tm Calculation:** Uses the Wallace Rule for accurate melting temperatures.
@@ -104,13 +103,11 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # AUTHOR ---
     st.write("### 👨‍🔬 Author")
     st.markdown("**Monika Yadav**")
     st.caption("MSc Bioinformatics Candidate")
     st.caption("BSc (Hons.)/MSc Biotechnology")
     
-    # CONTACT ME (Social Links) ---
     st.markdown(
         """
         <div style="display: flex; gap: 10px;">
@@ -139,7 +136,7 @@ with st.expander("📖 How to use this tool"):
         * **GC%:** Ideal range is usually 40-60%.
     """)
 
-# E. TABS (The Workspace)
+# E. TABS
 tab1, tab2 = st.tabs(["🔍 Single Sequence", "📂 Bulk Analysis (Upload)"])
 
 # === TAB 1: SINGLE SEQUENCE ===
@@ -248,6 +245,7 @@ with tab2:
                 type="primary"
 
             )
+
 
 
 
