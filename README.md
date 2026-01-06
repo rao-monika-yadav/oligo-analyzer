@@ -2,10 +2,10 @@
 
 **A professional bioinformatics dashboard for primer design and QC. Features include batch FASTA processing, Tm & Molecular Weight calculation, GC visualization, and instant reverse complement generation. Built with Python & Streamlit.**
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url-here)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://your-app-url-here](https://oligo-analyzer-ku3za7hrcf3th9vjuuylps.streamlit.app/))
 
 ## 📌 Overview
-The **Oligo Analyzer** is a web-based application built to streamline the workflow of molecular biologists. It replaces manual calculations and Excel sheets with an automated, error-free dashboard. 
+The **Oligo Analyzer** is a web-based application built to streamline the workflow of molecular biologists. It replaces manual calculations with an automated, error-free dashboard. 
 
 It handles both **single-sequence analysis** for quick checks and **batch processing** for analyzing hundreds of primers from FASTA files simultaneously.
 
@@ -57,4 +57,5 @@ If you want to run this tool on your own machine:
 ---
 
 *Disclaimer: This tool is intended for research and educational purposes only.*
+
 
